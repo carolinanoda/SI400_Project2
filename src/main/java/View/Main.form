@@ -21,9 +21,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Arquivos"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
-            <Property name="bounds" type="java.awt.Rectangle" editor="org.netbeans.beaninfo.editors.RectangleEditor">
-              <Rectangle value="[0, 0, 50, 23]"/>
-            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">

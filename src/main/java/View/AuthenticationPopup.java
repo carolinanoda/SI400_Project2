@@ -15,6 +15,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
      */
     public AuthenticationPopup() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -47,8 +48,18 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel2.setToolTipText("");
 
         jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPasswordField1MouseClicked(evt);
+            }
+        });
 
         jButton1.setText("Entrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginInput(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel3.setText("Insira seus dados para acessar o portal");
@@ -110,6 +121,23 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public String login;
+    public String password;
+    private void loginInput(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginInput
+        login = jTextField1.getText();
+        password = new String(jPasswordField1.getPassword());
+    }//GEN-LAST:event_loginInput
+    
+    boolean isClicked = false;
+    private void jPasswordField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MouseClicked
+        if(!isClicked) {
+            jPasswordField1.setText("");
+            isClicked = true;
+        }
+        else {
+        }
+    }//GEN-LAST:event_jPasswordField1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -142,6 +170,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AuthenticationPopup().setVisible(true);
+                
             }
         });
     }
