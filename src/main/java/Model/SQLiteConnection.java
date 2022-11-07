@@ -14,10 +14,10 @@ import java.sql.SQLException;
  * @author marcos-medeiros
  */
 public class SQLiteConnection implements InterfaceDatabaseDAO {
-    public final String DB = "jdbc:sqlite:SI400A-Project2.db";
-
+    private String DB = "jdbc:sqlite:SI400A-Project2.db";
     private Connection connection;
-
+    
+    @Override
     public Connection getConnection() {
         if (this.connection == null) {
             try {
@@ -33,6 +33,7 @@ public class SQLiteConnection implements InterfaceDatabaseDAO {
         return this.connection;
     }
     
+    @Override
     public void terminate() {
         try {
             (this.getConnection()).close();

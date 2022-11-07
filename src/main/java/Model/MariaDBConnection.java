@@ -13,11 +13,9 @@ import java.sql.SQLException;
  *
  * @author marcos-medeiros
  */
-public class MariaDBConnection {
-    public final String DB = "jdbc:mariadb://localhost:3306/DB?user={{user}}&password={{password}}";
-    
+public class MariaDBConnection implements InterfaceDatabaseDAO {
+    private String DB = "jdbc:mariadb://localhost:3306/DB?user={{user}}&password={{password}}";
     private Connection connection;
-    
     private String user = null;
     private String password = null;
     
@@ -25,7 +23,8 @@ public class MariaDBConnection {
         this.user = user;
         this.password = password;
     }
-
+    
+    @Override
     public Connection getConnection() {
         if (this.connection == null) {
             try {
@@ -44,6 +43,7 @@ public class MariaDBConnection {
         return this.connection;
     }
     
+    @Override
     public void terminate() {
         try {
             (this.getConnection()).close();
