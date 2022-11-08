@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
-
 package com.mycompany.si400_project2;
+import java.util.List;
+import Model.*;
 
 /**
  *
@@ -12,6 +9,19 @@ package com.mycompany.si400_project2;
 public class SI400_Project2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Iniciando testes!");
+        System.out.println("\n");
+
+        
+        System.out.println("Listando todas as linhas:");
+        List<TextLines> textLines = TextLinesDAOSQLite.getInstance().retrieveAllLines();
+        
+        textLines.forEach(textLine -> {
+            System.out.println("textLine ID is: " + textLine.getGroupId() + "\n"
+                + " his file is: " + textLine.getFile() + "\n"
+                + " his line is: " + textLine.getLine() + "\n"
+                + " his text is: " + textLine.getText() + "\n"
+            );
+        });
     }
 }

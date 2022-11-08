@@ -1,17 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.*;
 
 /**
  *
- * @author marcos-medeiros
+ * @author marcos-medeiros, GutoRomagnolo
  */
 public class SQLiteConnection implements InterfaceDatabaseDAO {
     private String DB = "jdbc:sqlite:SI400A-Project2.db";
@@ -31,6 +28,19 @@ public class SQLiteConnection implements InterfaceDatabaseDAO {
             }
         }
         return this.connection;
+    }
+
+    public ResultSet getResultSet(String query) {
+        Statement statement;
+        ResultSet resultSet = null;
+
+        try {
+            statement = (Statement) connection.createStatement();
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException exception) {
+            System.err.println("Exception: " + exception.getMessage());
+        }
+        return resultSet;
     }
     
     @Override
