@@ -14,7 +14,7 @@ public class SI400_Project2 {
 
         
         System.out.println("Listando todas as linhas:");
-        List<TextLines> textLines = TextLinesDAOSQLite.getInstance().retrieveAllLines();
+        List<TextLines> textLines = TextLinesDAO.getInstance().retrieveAllLines();
         
         textLines.forEach(textLine -> {
             System.out.println("textLine ID is: " + textLine.getGroupId() + "\n"

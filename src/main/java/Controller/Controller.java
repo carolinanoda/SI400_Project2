@@ -8,14 +8,14 @@ import View.AuthenticationPopup;
  * @author carol
  */
 
-public class Controller implements InterfaceDatabaseDAO{
+public class Controller{
     
-    public class connectDatabase(){
-        
-    }
-    
-    public void disconnectDatabase(){
-
-    }
+//    public class connectDatabase(){
+//        
+//    }
+//    
+//    public void disconnectDatabase(){
+//
+//    }
     
 }

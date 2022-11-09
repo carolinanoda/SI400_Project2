@@ -23,6 +23,4 @@ public class Connection {
                 throw new AssertionError();
         }
     }
-    
-    public 
 }

@@ -1,6 +1,9 @@
 package View;
 
 import Controller.Controller;
+import Model.TextLines;
+import Model.TextLinesDAO;
+import java.util.List;
 
 /**
  *
@@ -14,8 +17,16 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
+        initMyComponents();
     }
     
+     private void initMyComponents(){
+         List<TextLines> lixo = TextLinesDAO.getInstance().retrieveAllLines();
+         for (TextLines line : lixo) {
+             jTextArea1.append(line.getText() + "\n");
+         }
+        
+     }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,7 +56,6 @@ public class Main extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis dictum nisl, efficitur malesuada magna maximus vel. Nunc tristique, nisl nec gravida pretium, lectus urna mollis est, ac tempus ante velit at ex. Pellentesque sit amet nulla quis lorem gravida placerat. Morbi nec libero quis augue porttitor bibendum id a orci. Donec iaculis eros sed ipsum ornare consequat. Aliquam vehicula neque non tellus congue, id tincidunt tortor scelerisque. Maecenas pharetra risus nisl, id efficitur tortor varius a.  Nulla at facilisis velit. Nullam lobortis bibendum elit eu mattis. Pellentesque id est tincidunt dui dignissim vestibulum a ut urna. Donec mattis sagittis nisl, a porttitor ipsum mattis vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac sem vel ante cursus bibendum a a nisl. Maecenas quis lobortis mi. Curabitur id porttitor leo, auctor porta quam. Praesent felis massa, posuere eu dui non, vulputate pulvinar lacus. Phasellus at feugiat arcu, nec aliquam sapien. Donec sit amet purus iaculis, porttitor urna a, tincidunt turpis. Proin commodo libero sit amet quam aliquam efficitur.  Nulla neque risus, vehicula ut enim ut, sodales eleifend tellus. Phasellus eget odio tristique, fringilla sem eu, aliquam libero. Vivamus luctus diam quis ligula aliquam, vel viverra tellus ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris fringilla nisl ac lacinia imperdiet. Nulla congue mauris in mi fermentum mollis. Nulla dapibus aliquam nisl in lobortis. Cras eros nisl, aliquam vitae ligula quis, egestas aliquam nisl. Suspendisse eget mauris eget arcu hendrerit dignissim vitae eu diam. Sed ornare nec mauris a ornare. Sed quis posuere quam. Quisque a turpis eu magna faucibus ornare a sagittis eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent hendrerit imperdiet varius. Vivamus erat lectus, tempus vel arcu at, scelerisque euismod dolor.  Morbi consequat fringilla massa, ut sollicitudin nibh viverra eget. Mauris at erat lacus. Suspendisse molestie pharetra nisl. Curabitur ultricies, tortor at tincidunt bibendum, ex risus varius felis, elementum maximus nisi nulla in sem. Proin quis posuere est. Ut dictum volutpat nunc. Sed pellentesque elit quis sem aliquet finibus. Suspendisse potenti. Aliquam sit amet eros quis sapien luctus bibendum eu sed felis. Aliquam mauris dui, lacinia et turpis sed, vestibulum sollicitudin nulla. Pellentesque dignissim vestibulum consectetur. Curabitur condimentum purus vitae imperdiet congue. Aliquam viverra urna sed feugiat mollis. Suspendisse potenti. Donec vitae interdum tellus, eu gravida sem.  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras tristique turpis at arcu consequat hendrerit id nec erat. Suspendisse non ultricies neque. Nunc vulputate, libero nec lacinia pharetra, ante massa ornare lorem, nec consectetur mauris purus non nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam non neque at leo porta vehicula. Praesent mollis, urna porta ultricies sollicitudin, arcu ipsum semper ligula, non tincidunt erat neque imperdiet ligula. Aliquam condimentum nulla ligula, et blandit leo ullamcorper at. Pellentesque iaculis, magna tincidunt convallis consectetur, felis neque rhoncus turpis, finibus ultrices arcu mi in lacus. Pellentesque ex mi, pellentesque eget porttitor quis, cursus quis neque. Nulla luctus eleifend dolor sed molestie. Proin sit amet mattis justo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis dictum nisl, efficitur malesuada magna maximus vel. Nunc tristique, nisl nec gravida pretium, lectus urna mollis est, ac tempus ante velit at ex. Pellentesque sit amet nulla quis lorem gravida placerat. Morbi nec libero quis augue porttitor bibendum id a orci. Donec iaculis eros sed ipsum ornare consequat. Aliquam vehicula neque non tellus congue, id tincidunt tortor scelerisque. Maecenas pharetra risus nisl, id efficitur tortor varius a.  Nulla at facilisis velit. Nullam lobortis bibendum elit eu mattis. Pellentesque id est tincidunt dui dignissim vestibulum a ut urna. Donec mattis sagittis nisl, a porttitor ipsum mattis vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac sem vel ante cursus bibendum a a nisl. Maecenas quis lobortis mi. Curabitur id porttitor leo, auctor porta quam. Praesent felis massa, posuere eu dui non, vulputate pulvinar lacus. Phasellus at feugiat arcu, nec aliquam sapien. Donec sit amet purus iaculis, porttitor urna a, tincidunt turpis. Proin commodo libero sit amet quam aliquam efficitur.  Nulla neque risus, vehicula ut enim ut, sodales eleifend tellus. Phasellus eget odio tristique, fringilla sem eu, aliquam libero. Vivamus luctus diam quis ligula aliquam, vel viverra tellus ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris fringilla nisl ac lacinia imperdiet. Nulla congue mauris in mi fermentum mollis. Nulla dapibus aliquam nisl in lobortis. Cras eros nisl, aliquam vitae ligula quis, egestas aliquam nisl. Suspendisse eget mauris eget arcu hendrerit dignissim vitae eu diam. Sed ornare nec mauris a ornare. Sed quis posuere quam. Quisque a turpis eu magna faucibus ornare a sagittis eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent hendrerit imperdiet varius. Vivamus erat lectus, tempus vel arcu at, scelerisque euismod dolor.  Morbi consequat fringilla massa, ut sollicitudin nibh viverra eget. Mauris at erat lacus. Suspendisse molestie pharetra nisl. Curabitur ultricies, tortor at tincidunt bibendum, ex risus varius felis, elementum maximus nisi nulla in sem. Proin quis posuere est. Ut dictum volutpat nunc. Sed pellentesque elit quis sem aliquet finibus. Suspendisse potenti. Aliquam sit amet eros quis sapien luctus bibendum eu sed felis. Aliquam mauris dui, lacinia et turpis sed, vestibulum sollicitudin nulla. Pellentesque dignissim vestibulum consectetur. Curabitur condimentum purus vitae imperdiet congue. Aliquam viverra urna sed feugiat mollis. Suspendisse potenti. Donec vitae interdum tellus, eu gravida sem.  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras tristique turpis at arcu consequat hendrerit id nec erat. Suspendisse non ultricies neque. Nunc vulputate, libero nec lacinia pharetra, ante massa ornare lorem, nec consectetur mauris purus non nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam non neque at leo porta vehicula. Praesent mollis, urna porta ultricies sollicitudin, arcu ipsum semper ligula, non tincidunt erat neque imperdiet ligula. Aliquam condimentum nulla ligula, et blandit leo ullamcorper at. Pellentesque iaculis, magna tincidunt convallis consectetur, felis neque rhoncus turpis, finibus ultrices arcu mi in lacus. Pellentesque ex mi, pellentesque eget porttitor quis, cursus quis neque. Nulla luctus eleifend dolor sed molestie. Proin sit amet mattis justo.");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -86,7 +96,6 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.setText("Arquivos");
         jMenu1.setToolTipText("");
-        jMenu1.setBounds(new java.awt.Rectangle(0, 0, 50, 23));
 
         jMenuItem1.setText("Autenticar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
