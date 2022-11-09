@@ -1,7 +1,9 @@
 package Controller;
 
-import Model.InterfaceDatabaseDAO;
-import View.AuthenticationPopup;
+import Model.TextLines;
+import Model.TextLinesDAO;
+import java.util.List;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -17,5 +19,12 @@ public class Controller{
 //    public void disconnectDatabase(){
 //
 //    }
+    
+    public static void textExibition(JTextArea textArea){
+        List<TextLines> text = TextLinesDAO.getInstance().retrieveAllLines();
+         for (TextLines line : text) {
+             textArea.append(line.getText() + "\n");
+         }
+    }
     
 }
