@@ -1,9 +1,6 @@
 package View;
 
 import Controller.Controller;
-import Model.TextLines;
-import Model.TextLinesDAO;
-import java.util.List;
 
 /**
  *

@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.Configurations;
 import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,12 +10,14 @@ import java.util.ArrayList;
  *
  * @author marcos-medeiros, GutoRomagnolo
  */
-public class TextLinesDAO extends SQLiteConnection {
+public class TextLinesDAO extends ConnectionFactory {
 
     private static TextLinesDAO instance;
+    private static InterfaceDatabaseDAO connection;
 
     private TextLinesDAO() {
-        getConnection();
+        connection = getSGBD(Configurations.SGBD);
+        connection.getConnection();
     }
 
     public static TextLinesDAO getInstance() {
@@ -25,13 +28,13 @@ public class TextLinesDAO extends SQLiteConnection {
         TextLines textLine = null;
 
         try {
-        textLine =
-            new TextLines(
-                result_set.getInt("groupId"),
-                result_set.getString("file"),
-                result_set.getInt("line"),
-                result_set.getString("text")
-            );
+            textLine =
+                new TextLines(
+                    result_set.getInt("groupId"),
+                    result_set.getString("file"),
+                    result_set.getInt("line"),
+                    result_set.getString("text")
+                );
         } catch (SQLException exception) {
             System.err.println("Exception: " + exception.getMessage());
         }
@@ -41,7 +44,7 @@ public class TextLinesDAO extends SQLiteConnection {
 
     public List retrieve(String query) {
         List<TextLines> textLines = new ArrayList();
-        ResultSet result_set = getResultSet(query);
+        ResultSet result_set = connection.getResultSet(query);
 
         try {
             while (result_set.next()) {

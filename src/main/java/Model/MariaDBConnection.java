@@ -3,14 +3,16 @@ package Model;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
  * @author marcos-medeiros
  */
 public class MariaDBConnection implements InterfaceDatabaseDAO {
-    private String DB = "jdbc:mariadb://localhost:3306/DB?user={{user}}&password={{password}}";
+    private String DB = "jdbc:mariadb://143.106.243.64:3306/SI400?user={{user}}&password={{password}}";
     private Connection connection;
     private String user = null;
     private String password = null;
@@ -24,10 +26,10 @@ public class MariaDBConnection implements InterfaceDatabaseDAO {
     public Connection getConnection() {
         if (this.connection == null) {
             try {
-                DB.replaceAll("\\{\\{user\\}\\}", this.user);
-                DB.replaceAll("\\{\\{password\\}\\}", this.password);
+                String DBString = DB.replaceAll("\\{\\{user}}", this.user);
+                DBString = DBString.replaceAll("\\{\\{password}}", this.password);
                 
-                this.connection = DriverManager.getConnection(DB);
+                this.connection = DriverManager.getConnection(DBString);
                 
                 if (this.connection != null) {
                     DatabaseMetaData metadata = this.connection.getMetaData();
@@ -37,6 +39,20 @@ public class MariaDBConnection implements InterfaceDatabaseDAO {
             }
         }
         return this.connection;
+    }
+    
+    @Override
+    public ResultSet getResultSet(String query) {
+        Statement statement;
+        ResultSet resultSet = null;
+
+        try {
+            statement = (Statement) connection.createStatement();
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException exception) {
+            System.err.println("Exception: " + exception.getMessage());
+        }
+        return resultSet;
     }
     
     @Override

@@ -30,6 +30,7 @@ public class SQLiteConnection implements InterfaceDatabaseDAO {
         return this.connection;
     }
 
+    @Override
     public ResultSet getResultSet(String query) {
         Statement statement;
         ResultSet resultSet = null;

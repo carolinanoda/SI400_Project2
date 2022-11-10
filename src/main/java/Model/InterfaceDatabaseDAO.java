@@ -1,6 +1,7 @@
 package Model;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 
 /**
  *
@@ -8,5 +9,6 @@ import java.sql.Connection;
  */
 public interface InterfaceDatabaseDAO {
     Connection getConnection();
+    ResultSet getResultSet(String query);
     void terminate();
 }
