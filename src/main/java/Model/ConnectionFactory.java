@@ -13,7 +13,7 @@ public class ConnectionFactory {
         try {
             if (SGBD == null) SGBD = "SQLite";
             if (SGBD.equals("SQLite")) return new SQLiteConnection();
-            if (SGBD.equals("MariaDB")) return new MariaDBConnection("si400_2022", "si400_2022");
+            if (SGBD.equals("MariaDB")) return new MariaDBConnection("test", "test");
         } catch (Exception exception) {
             System.err.println("Exception: " + exception.getMessage());
         }

@@ -12,7 +12,7 @@ import java.sql.Statement;
  * @author marcos-medeiros
  */
 public class MariaDBConnection implements InterfaceDatabaseDAO {
-    private String DB = "jdbc:mariadb://143.106.243.64:3306/SI400?user={{user}}&password={{password}}";
+    private String DB = "jdbc:mariadb://localhost:3306/SI400?user={{user}}&password={{password}}";
     private Connection connection;
     private String user = null;
     private String password = null;
