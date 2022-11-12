@@ -4,6 +4,7 @@ import Controller.Controller;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JTextArea;
+import Model.MariaDBConnection;
 
 /**
  *
@@ -193,8 +194,6 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        //Controller controller = new Controller();
-        //controller.disconnectDatabase();
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -284,12 +283,13 @@ public class Main extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                AuthenticationPopup popup = new AuthenticationPopup();
+                popup.setVisible(true);
             }
+
         });
     }
 
