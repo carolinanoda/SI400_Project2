@@ -11,9 +11,9 @@ import javax.swing.JTextArea;
  */
 
 public class Controller{
-    public static void textExibition(JTextArea textArea){
+    public static void textExibition(JTextArea textArea, int groupId){
         try {
-            List<TextLines> text = TextLinesDAO.getInstance().retrieveAllLines();
+            List<TextLines> text = TextLinesDAO.getInstance().retrieveAllLines(groupId);
 
             for (TextLines line : text) {
                textArea.append(line.getText() + "\n");
@@ -22,4 +22,5 @@ public class Controller{
             System.err.println("Exception: " + exception.getMessage());
         }
     }
+    
 }
