@@ -57,8 +57,6 @@ public class TextLinesDAO extends ConnectionFactory {
     }
 
     public List retrieveAllLines(int groupId) {
-//        System.out.println("SELECT * FROM Fragmentos WHERE groupId = " + String.valueOf(groupId));
-//        System.out.println(this.retrieve("SELECT * FROM Fragmentos WHERE groupId = " + String.valueOf(groupId)));
-        return this.retrieve("SELECT * FROM Fragmentos WHERE groupId = " + String.valueOf(groupId) + " ORDER BY line ASC");
+        return this.retrieve("SELECT * FROM Fragmentos WHERE groupId = " + groupId + " ORDER BY line ASC");
     }
 }

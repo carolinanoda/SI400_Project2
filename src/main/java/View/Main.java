@@ -105,10 +105,15 @@ public class Main extends javax.swing.JFrame {
 
         jLabel2.setText("Selecione qual texto deseja visualizar:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um grupo", "Grupo A", "Grupo B", "Grupo C" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um grupo", "Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E", "Grupo F", "Grupo G", "Grupo H", "Grupo I", "Grupo J", "Grupo K", "Grupo L" }));
         jComboBox1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox1ItemStateChanged(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
             }
         });
 
@@ -202,24 +207,55 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
         jTextArea1.setText("");
         int index = jComboBox1.getSelectedIndex();
 
-        System.out.println("Você escolheu a opção " + jComboBox1.getSelectedIndex());
         switch (index) {
-
             case 0:
                 break;
-
             case 1:
                 Controller.textExibition(jTextArea1, index);
                 break;
-
             case 2:
                 Controller.textExibition(jTextArea1, index);
                 break;
+            case 3:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 4:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 5:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 6:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 7:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 8:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 9:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 10:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 11:
+                Controller.textExibition(jTextArea1, index);
+                break;
+            case 12:
+                Controller.textExibition(jTextArea1, index);
+                break;
         }
-    }//GEN-LAST:event_jComboBox1ItemStateChanged
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
