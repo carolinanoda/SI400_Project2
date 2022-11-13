@@ -185,7 +185,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         password_input = new String(jPasswordField1.getPassword());
         if(login.equals(login_input) && password.equals(password_input)) {
             this.dispose();
-            new Main().setVisible(true);
+            new TextForm().setVisible(true);
         }
         else {
             jLabel4.setVisible(true);
