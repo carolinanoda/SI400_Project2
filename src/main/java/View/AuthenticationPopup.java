@@ -63,7 +63,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel2.setText("Senha:");
         jLabel2.setToolTipText("");
 
-        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setText("");
         jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jPasswordField1KeyPressed(evt);

@@ -1,21 +1,19 @@
 package Model;
 
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-
+import javax.swing.JFrame;
 
 /**
  *
  * @author gustavo
  */
+
 public class WriteFile {
     private static WriteFile instance = null;
 
@@ -25,30 +23,26 @@ public class WriteFile {
         }
         return instance;
     }
-    
+
     public void writeFile(String content) throws IOException {
         JFileChooser chooser = new JFileChooser();
-        
-        chooser.setCurrentDirectory(new java.io.File("."));
+        JFrame parentFrame = new JFrame();
+        Writer file;
+
         chooser.setDialogTitle("Selecione o destino do arquivo");
-        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        chooser.setAcceptAllFileFilterUsed(false);
-        
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-           try {
-                File filePath = chooser.getCurrentDirectory();
-                File outputFile = chooser.getSelectedFile();
-                
-                FileWriter file = new FileWriter(filePath);
+
+        int userSelection = chooser.showSaveDialog(parentFrame);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            try {
+                File savedFile = chooser.getSelectedFile();
+                file = new OutputStreamWriter(new FileOutputStream(savedFile.getAbsolutePath() + ".txt"), StandardCharsets.UTF_8);
                 file.write(content);
                 file.close();
-           } catch (IOException error) {
-                System.out.println("Ocorreu um erro: " + error);
-           }
-
+            } catch (IOException error) {
+                System.out.println("Ocorreu um erro ao salvar o arquivo: " + error);
+            }
         } else {
-            System.out.println("No Selection ");
+            System.out.println("Nenhum diretório selecionado.");
         }
     }
 }
-    

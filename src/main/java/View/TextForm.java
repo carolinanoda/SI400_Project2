@@ -5,6 +5,8 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.JTextArea;
 import Model.MariaDBConnection;
+import Model.WriteFile;
+import java.io.IOException;
 
 /**
  *
@@ -97,9 +99,17 @@ public class TextForm extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setText("Salvar texto");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+                WriteFile file_writer = WriteFile.getInstance();
+
+                try {
+                    file_writer.writeFile(jTextArea1.getText());
+                } catch (IOException error) {
+                    System.out.println("Ocorreu um erro: " + error);
+                }
             }
         });
 
@@ -222,6 +232,12 @@ public class TextForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTextArea1.setText("");
         int index = jComboBox1.getSelectedIndex();
+
+        if (index == 0) {
+            jButton1.setEnabled(false);
+        } else {
+            jButton1.setEnabled(true);
+        }
 
         switch (index) {
             case 0:
