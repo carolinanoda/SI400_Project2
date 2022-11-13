@@ -4,6 +4,10 @@
  */
 package View;
 
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author maria
@@ -44,15 +48,25 @@ public class About extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Versão e Créditos"));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imgs/Carolina.png"))); // NOI18N
+        URL image_carol = getClass().getResource("/Images/Carolina.png");
+        ImageIcon icon_carol = new ImageIcon(image_carol);
+        jLabel1.setIcon(icon_carol); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imgs/Gustavo.png"))); // NOI18N
+        URL image_gustavo = getClass().getResource("/Images/Gustavo.png");
+        ImageIcon icon_gustavo = new ImageIcon(image_gustavo);
+        jLabel2.setIcon(icon_gustavo); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imgs/Thamires.png"))); // NOI18N
+        URL image_thamires = getClass().getResource("/Images/Thamires.png");
+        ImageIcon icon_thamires = new ImageIcon(image_thamires);
+        jLabel3.setIcon(icon_thamires); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imgs/Marcos.png"))); // NOI18N
+        URL image_marcos = getClass().getResource("/Images/Marcos.png");
+        ImageIcon icon_marcos = new ImageIcon(image_marcos);
+        jLabel4.setIcon(icon_marcos); // NOI18N
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imgs/Mariana.png"))); // NOI18N
+        URL image_mariana = getClass().getResource("/Images/Mariana.png");
+        ImageIcon icon_mariana = new ImageIcon(image_mariana);
+        jLabel5.setIcon(icon_mariana); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
         jLabel6.setText("Carolina Noda Morishita 254187 ");
@@ -78,42 +92,32 @@ public class About extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(169, 169, 169)
-                .addComponent(jLabel5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel3))
+                .addGap(142, 142, 142)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel5))
                 .addGap(47, 47, 47))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
-                        .addComponent(jLabel7)
-                        .addGap(142, 142, 142)
-                        .addComponent(jLabel8)
-                        .addGap(36, 36, 36))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(186, 186, 186)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(jLabel9)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(181, 181, 181))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(jLabel10)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(186, 186, 186)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel10))
+                .addGap(181, 181, 181))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
