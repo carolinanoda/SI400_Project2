@@ -10,4 +10,6 @@ package Controller;
  */
 public class Configurations {
     public static String SGBD = "SQLite";
+    public static String MariaDB_login = "";
+    public static String MariaDB_password = "";
 }

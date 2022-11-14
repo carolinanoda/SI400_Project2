@@ -24,18 +24,20 @@ public class WriteFile {
         return instance;
     }
 
-    public void writeFile(String content) throws IOException {
+    public void writeFile(String content, String file_name) throws IOException {
         JFileChooser chooser = new JFileChooser();
         JFrame parentFrame = new JFrame();
         Writer file;
 
         chooser.setDialogTitle("Selecione o destino do arquivo");
+        chooser.setSelectedFile(new File(file_name));
 
         int userSelection = chooser.showSaveDialog(parentFrame);
+        
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             try {
                 File savedFile = chooser.getSelectedFile();
-                file = new OutputStreamWriter(new FileOutputStream(savedFile.getAbsolutePath() + ".txt"), StandardCharsets.UTF_8);
+                file = new OutputStreamWriter(new FileOutputStream(savedFile.getAbsolutePath()), StandardCharsets.UTF_8);
                 file.write(content);
                 file.close();
             } catch (IOException error) {

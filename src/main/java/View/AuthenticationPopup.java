@@ -5,6 +5,7 @@
 package View;
 
 import java.awt.event.KeyEvent;
+import Controller.Controller;
 
 /**
  *
@@ -40,7 +41,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Autenticação");
         setResizable(false);
 
@@ -63,7 +64,6 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel2.setText("Senha:");
         jLabel2.setToolTipText("");
 
-        jPasswordField1.setText("");
         jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jPasswordField1KeyPressed(evt);
@@ -183,11 +183,14 @@ public class AuthenticationPopup extends javax.swing.JFrame {
     private void getInput() {
         login_input = jTextField1.getText();
         password_input = new String(jPasswordField1.getPassword());
+        
+        Controller.setLoginDB(login_input);
+        Controller.setPasswordDB(password_input);
+        
         if(login.equals(login_input) && password.equals(password_input)) {
             this.dispose();
             new TextForm().setVisible(true);
-        }
-        else {
+        } else {
             jLabel4.setVisible(true);
         }
     }

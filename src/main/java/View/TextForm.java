@@ -1,12 +1,9 @@
 package View;
 
 import Controller.Controller;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import javax.swing.JTextArea;
-import Model.MariaDBConnection;
-import Model.WriteFile;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -196,7 +193,13 @@ public class TextForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        try {
+            int index = jComboBox1.getSelectedIndex();
+            
+            Controller.makeFile(jTextArea1, index);
+        } catch (IOException ex) {
+            Logger.getLogger(TextForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
