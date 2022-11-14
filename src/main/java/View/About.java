@@ -9,7 +9,7 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 
 /**
- *
+ * Class responsible for presenting the project's authorship and version.
  * @author maria
  */
 public class About extends javax.swing.JFrame {
@@ -165,6 +165,7 @@ public class About extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
+     * Method responsible for initializing and opening the About window.
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -199,6 +200,9 @@ public class About extends javax.swing.JFrame {
         });
     }
     
+    /**
+     * Centers the location of the window in the screen.
+     */
      private void myInitComponents(){
         this.setLocationRelativeTo(null);
      }

@@ -6,7 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Class responsible for the main window's interface that shows the recovered texts
+ * of each group.
  * @author thamiresp
  */
 public class TextForm extends javax.swing.JFrame {
@@ -18,7 +19,11 @@ public class TextForm extends javax.swing.JFrame {
         initComponents();
         initMyComponents();
     }
-
+    
+    /**
+     * Centers the location of the window in the screen and makes the text area
+     * uneditable.
+     */
     private void initMyComponents() {
         this.setLocationRelativeTo(null);
 //         Controller.textExibition(jTextArea1,2);
@@ -182,12 +187,21 @@ public class TextForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Opens the authentication popup when the menu item "Autenticar" is clicked.
+     * @param evt 
+     */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         AuthenticationPopup popup = new AuthenticationPopup();
         popup.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
+    
+    /**
+     * Terminates database connections and exits the program when menu item "Sair" 
+     * is clicked.
+     * @param evt 
+     */
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -205,7 +219,11 @@ public class TextForm extends javax.swing.JFrame {
     private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
         
     }//GEN-LAST:event_jComboBox1ItemStateChanged
-
+    
+    /**
+     * Exibits the text based on the user's selected option of the drop-down list.
+     * @param evt 
+     */
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         jTextArea1.setText("");
@@ -258,18 +276,27 @@ public class TextForm extends javax.swing.JFrame {
                 break;
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
-
+    
+    /**
+     * Opens the help window when menu item "Ajuda" is clicked.
+     * @param evt 
+     */
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         Help help = new Help();
         help.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
-
+    
+    /**
+     * Opens the credits and version window when menu item "Sobre" is clicked.
+     * @param evt 
+     */
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         About about = new About();
         about.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
+     * Initializes the program, starting with the authentication popup.
      * @param args the command line arguments
      */
     public static void main(String args[]) {

@@ -5,7 +5,8 @@
 package View;
 
 /**
- *
+ * Class responsible for the Help window's interface where it describe how the
+ * program work.
  * @author maria
  */
 public class Help extends javax.swing.JFrame {
@@ -43,7 +44,6 @@ public class Help extends javax.swing.JFrame {
 
         text.setColumns(20);
         text.setRows(5);
-        text.setCaretColor(new java.awt.Color(0, 0, 0));
         text.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(text);
 
@@ -86,7 +86,10 @@ public class Help extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Method responsible for setting the text and making the window responsive.
+     */
     private void myInitComponents(){
         this.setLocationRelativeTo(null);
         text.setEditable(false);
@@ -100,6 +103,7 @@ public class Help extends javax.swing.JFrame {
     }
     
     /**
+     * Initializes and opens the Help window.
      * @param args the command line arguments
      */
     public static void main(String args[]) {

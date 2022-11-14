@@ -8,7 +8,8 @@ import java.awt.event.KeyEvent;
 import Controller.Controller;
 
 /**
- *
+ * Class responsible for the authentication popup's interface that checks the
+ * user's input to make connection with the database.
  * @author thamiresp
  */
 public class AuthenticationPopup extends javax.swing.JFrame {
@@ -49,11 +50,6 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel1.setText("Usuário:");
         jLabel1.setToolTipText("");
 
-        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField1FocusLost(evt);
-            }
-        });
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField1KeyPressed(evt);
@@ -152,34 +148,42 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Gets user's input when button "Entrar" is clicked.
+     * @param evt 
+     */
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         getInput();
     }//GEN-LAST:event_jButton1MouseClicked
-
+    
+    /**
+     * Gets user's input when enter key is pressed in password field.
+     * @param evt 
+     */
     private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             getInput();
         }
     }//GEN-LAST:event_jPasswordField1KeyPressed
-
+    
+    /**
+     * Gets user's input when enter key is pressed in username field.
+     * @param evt 
+     */
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             getInput();
         }
     }//GEN-LAST:event_jTextField1KeyPressed
-
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
-        if(!lostFocus) {
-            jPasswordField1.setText("");
-            lostFocus = true;
-        }
-    }//GEN-LAST:event_jTextField1FocusLost
     
     public String login_input;
     public String password_input; 
     public String login = "si400_2022";
     public String password = "si400_2022";
-    boolean lostFocus = false;
+    
+    /**
+     * Gets user's input and opens the TextForm window if the authentication is valid.
+     */
     private void getInput() {
         login_input = jTextField1.getText();
         password_input = new String(jPasswordField1.getPassword());
@@ -197,6 +201,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
             
 
     /**
+     * Method responsible for initializing and opening the Authentication popup.
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -227,8 +232,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                AuthenticationPopup popup = new AuthenticationPopup();
-                popup.setVisible(true);
+                new AuthenticationPopup().setVisible(true);
             }
         });
     }
