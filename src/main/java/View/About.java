@@ -52,27 +52,22 @@ public class About extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Versão e Créditos"));
 
         try {
-            // URL image_carol = getClass().getResource("./src/main/java/Images/Carolina.png");
             BufferedImage image_carol = ImageIO.read(new File("./src/main/java/Images/Carolina.png"));
             ImageIcon icon_carol = new ImageIcon(image_carol);
             jLabel1.setIcon(icon_carol); // NOI18N
 
-            // URL image_gustavo = getClass().getResource("./src/main/java/Images/Gustavo.png");
             BufferedImage image_gustavo = ImageIO.read(new File("./src/main/java/Images/Gustavo.png"));
             ImageIcon icon_gustavo = new ImageIcon(image_gustavo);
             jLabel2.setIcon(icon_gustavo); // NOI18N
 
-            // URL image_thamires = getClass().getResource("./src/main/java/Images/Thamires.png");
             BufferedImage image_thamires = ImageIO.read(new File("./src/main/java/Images/Thamires.png"));
             ImageIcon icon_thamires = new ImageIcon(image_thamires);
             jLabel3.setIcon(icon_thamires); // NOI18N
 
-            // URL image_marcos = getClass().getResource("./src/main/java/Images/Marcos.png");
             BufferedImage image_marcos = ImageIO.read(new File("./src/main/java/Images/Marcos.png"));
             ImageIcon icon_marcos = new ImageIcon(image_marcos);
             jLabel4.setIcon(icon_marcos); // NOI18N
 
-            // URL image_mariana = getClass().getResource("./src/main/java/Images/Mariana.png");
             BufferedImage image_mariana = ImageIO.read(new File("./src/main/java/Images/Mariana.png"));
             ImageIcon icon_mariana = new ImageIcon(image_mariana);
             jLabel5.setIcon(icon_mariana); // NOI18N            
