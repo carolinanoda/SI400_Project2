@@ -48,7 +48,6 @@ public class Controller {
     
     public static boolean checkDatabase() {
         try {
-            System.out.println("Aqui");
             InterfaceDatabaseDAO connection = (new ConnectionFactory()).getSGBD(Controller.SGBD);
             return (connection.getConnection() instanceof Connection);   
         } catch (Exception exception) {

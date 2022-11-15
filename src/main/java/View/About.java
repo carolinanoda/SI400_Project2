@@ -6,6 +6,7 @@ package View;
 
 import java.net.URL;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 /**
