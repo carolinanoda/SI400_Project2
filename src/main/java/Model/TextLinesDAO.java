@@ -1,6 +1,6 @@
 package Model;
 
-import Controller.Configurations;
+import Controller.Controller;
 import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ public class TextLinesDAO extends ConnectionFactory {
     private static InterfaceDatabaseDAO connection;
 
     private TextLinesDAO() {
-        connection = getSGBD(Configurations.SGBD);
+        connection = getSGBD(Controller.SGBD);
         connection.getConnection();
     }
 

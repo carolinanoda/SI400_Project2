@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.Controller;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -12,22 +13,18 @@ import java.sql.Statement;
  * @author marcos-medeiros
  */
 public class MariaDBConnection implements InterfaceDatabaseDAO {
-    private String DB = "jdbc:mariadb://localhost:3306/SI400?user={{user}}&password={{password}}";
+    private String DB = "jdbc:mariadb://{{host}}:{{port}}/{{database}}?user={{user}}&password={{password}}";
     private Connection connection;
-    private String user = null;
-    private String password = null;
-    
-    public MariaDBConnection(String user, String password) {
-        this.user = user;
-        this.password = password;
-    }
     
     @Override
     public Connection getConnection() {
         if (this.connection == null) {
             try {
-                String DBString = DB.replaceAll("\\{\\{user}}", this.user);
-                DBString = DBString.replaceAll("\\{\\{password}}", this.password);
+                String DBString = DB.replaceAll("\\{\\{host}}", Controller.MariaDBObject.getHost());
+                DBString = DBString.replaceAll("\\{\\{port}}", Controller.MariaDBObject.getPort());
+                DBString = DBString.replaceAll("\\{\\{database}}", Controller.MariaDBObject.getBase());
+                DBString = DBString.replaceAll("\\{\\{user}}", Controller.MariaDBObject.getUser());
+                DBString = DBString.replaceAll("\\{\\{password}}", Controller.MariaDBObject.getPassword());
                 
                 this.connection = DriverManager.getConnection(DBString);
                 

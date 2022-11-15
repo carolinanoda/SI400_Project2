@@ -1,9 +1,13 @@
 package Controller;
 
+import Model.ConnectionFactory;
+import Model.DatabaseUser;
+import Model.InterfaceDatabaseDAO;
 import Model.TextLines;
 import Model.TextLinesDAO;
 import Model.WriteFile;
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.List;
 import javax.swing.JTextArea;
 
@@ -12,7 +16,10 @@ import javax.swing.JTextArea;
  * @author carol
  */
 
-public class Controller{
+public class Controller {
+    public static String SGBD = "SQLite";
+    public static DatabaseUser MariaDBObject = null;
+    
     public static void textExibition(JTextArea textArea, int groupId){
         try {
             List<TextLines> lines = TextLinesDAO.getInstance().retrieveAllLines(groupId);
@@ -35,19 +42,18 @@ public class Controller{
         (new WriteFile()).writeFile(textArea.getText(), file_name);
     }
     
-    public static void setLoginDB(String login) {
-        Configurations.MariaDB_login = login;
+    public static void databaseUser(String host, String port, String base, String login, String password) {
+        Controller.MariaDBObject = new DatabaseUser(host, port, base, login, password);
     }
     
-    public static String getLoginDB() {
-        return Configurations.MariaDB_login;
-    }
-    
-    public static void setPasswordDB(String password) {
-        Configurations.MariaDB_password = password;
-    }
-    
-    public static String getPasswordDB() {
-        return Configurations.MariaDB_password;
+    public static boolean checkDatabase() {
+        try {
+            System.out.println("Aqui");
+            InterfaceDatabaseDAO connection = (new ConnectionFactory()).getSGBD(Controller.SGBD);
+            return (connection.getConnection() instanceof Connection);   
+        } catch (Exception exception) {
+            System.err.println("Exception: " + exception.getMessage());
+            return false;
+        }
     }
 }
