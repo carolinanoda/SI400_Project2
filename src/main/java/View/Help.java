@@ -7,7 +7,9 @@ package View;
 /**
  * Class responsible for the Help window's interface where it describe how the
  * program work.
- * @author maria
+ * 
+ * @author Mariana Pereira Araújo
+ * @version 1.0
  */
 public class Help extends javax.swing.JFrame {
 

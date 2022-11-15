@@ -6,9 +6,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Class responsible for the main window's interface that shows the recovered texts
- * of each group.
- * @author thamiresp
+ * Class responsible for the main window's interface that shows the recovered
+ * texts of each group.
+ * 
+ * @author Carolina Noda Morishita
+ * @author Mariana Pereira Araújo
+ * @author Thamires de Melo Prado
+ * @version 1.0
  */
 public class TextForm extends javax.swing.JFrame {
 
@@ -50,7 +54,6 @@ public class TextForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -68,7 +71,7 @@ public class TextForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Status da conexão: [inserir status] ");
+        jLabel1.setText("Status da conexão: conectado");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,14 +113,6 @@ public class TextForm extends javax.swing.JFrame {
 
         jMenu1.setText("Arquivos");
         jMenu1.setToolTipText("");
-
-        jMenuItem1.setText("Autenticar");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Sair");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -188,15 +183,7 @@ public class TextForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    /**
-     * Opens the authentication popup when the menu item "Autenticar" is clicked.
-     * @param evt 
-     */
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        AuthenticationPopup popup = new AuthenticationPopup();
-        popup.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-    
+   
     /**
      * Terminates database connections and exits the program when menu item "Sair" 
      * is clicked.
@@ -342,7 +329,6 @@ public class TextForm extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

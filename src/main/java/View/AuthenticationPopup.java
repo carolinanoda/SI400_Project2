@@ -11,7 +11,9 @@ import static Controller.Controller.checkDatabase;
 /**
  * Class responsible for the authentication popup's interface that checks the
  * user's input to make connection with the database.
- * @author thamiresp
+ * 
+ * @author Carolina Noda Morishita
+ * @version 1.0
  */
 public class AuthenticationPopup extends javax.swing.JFrame {
 

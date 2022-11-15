@@ -7,9 +7,12 @@ import java.sql.SQLException;
 import java.sql.*;
 
 /**
+ * Class responsible for connecting the application with the SQLite database.
  *
- * @author marcos-medeiros, GutoRomagnolo
+ * @author Marcos César Medeiros
+ * @version 1.0
  */
+
 public class SQLiteConnection implements InterfaceDatabaseDAO {
     private String DB = "jdbc:sqlite:SI400A-Project2.db";
     private Connection connection;

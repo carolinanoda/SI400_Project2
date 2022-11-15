@@ -7,9 +7,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * Class responsible for obtaining records from the Fragments table and 
+ * transforming them into an object to perform the data manipulation process 
+ * in the program.
  *
- * @author marcos-medeiros, GutoRomagnolo
+ * @author Gustavo Ramos Romagnolo
+ * @author Marcos César Medeiros
+ * @author Thamires de Melo Prado
+ * @version 1.0
  */
+
 public class TextLinesDAO extends ConnectionFactory {
 
     private static TextLinesDAO instance;

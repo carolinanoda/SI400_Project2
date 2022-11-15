@@ -9,9 +9,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
+ * Class responsible for connecting the application with the MariaDB database.
  *
- * @author marcos-medeiros
+ * @author Gustavo Ramos Romagnolo
+ * @author Marcos César Medeiros
+ * @version 1.0
  */
+
 public class MariaDBConnection implements InterfaceDatabaseDAO {
     private String DB = "jdbc:mariadb://{{host}}:{{port}}/{{database}}?user={{user}}&password={{password}}";
     private Connection connection;

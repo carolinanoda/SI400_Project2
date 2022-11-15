@@ -10,8 +10,11 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 /**
+ * Class responsible for asking the user the location where he wants to save
+ * the text file.
  *
- * @author gustavo
+ * @author Gustavo Ramos Romagnolo
+ * @version 1.0
  */
 
 public class WriteFile {

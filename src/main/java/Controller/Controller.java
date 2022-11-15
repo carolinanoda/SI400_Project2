@@ -12,8 +12,13 @@ import java.util.List;
 import javax.swing.JTextArea;
 
 /**
+ * Class responsible for intermediating the visualization requests for data 
+ * manipulation.
  *
- * @author carol
+ * @author Gustavo Ramos Romagnolo
+ * @author Marcos César Medeiros
+ * @author Thamires de Melo Prado
+ * @version 1.0
  */
 
 public class Controller {

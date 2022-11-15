@@ -5,9 +5,12 @@
 package Model;
 
 /**
+ * ...
  *
- * @author marcos-medeiros
+ * @author Marcos César Medeiros
+ * @version 1.0
  */
+
 public class DatabaseUser {
     public String host;
     public String port;

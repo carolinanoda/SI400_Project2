@@ -1,9 +1,12 @@
 package Model;
 
 /**
+ * Class responsible for representing a line of text.
  *
- * @author marcos-medeiros
+ * @author Marcos César Medeiros
+ * @version 1.0
  */
+
 public class TextLines {
     private int groupId;
     private String file;

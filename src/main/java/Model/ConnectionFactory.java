@@ -5,9 +5,12 @@
 package Model;
 
 /**
+ * Factory class that facilitates database switching.
  *
- * @author marcos-medeiros
+ * @author Marcos César Medeiros
+ * @version 1.0
  */
+
 public class ConnectionFactory {
     public InterfaceDatabaseDAO getSGBD (String SGBD) {
         try {
