@@ -59,7 +59,8 @@ public class TextLinesDAO extends ConnectionFactory {
      */
     public List retrieve(String query) {
         List<TextLines> textLines = new ArrayList();
-        ResultSet result_set = connection.getResultSet(query);
+        
+        ResultSet result_set = ConnectionFactory.connection.getResultSet(query);
 
         try {
             while (result_set.next()) {

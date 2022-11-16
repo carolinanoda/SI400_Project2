@@ -209,13 +209,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
     /**
      * Gets user's input and opens the TextForm window if the authentication is valid.
      */
-    private void getInput() {
-        if (Controller.SGBD.equals("SQLite")) {
-            this.dispose();
-            new TextForm().setVisible(true);
-            return;
-        }
-        
+    private void getInput() {        
         host_input = jHostField1.getText();
         port_input = jPortField1.getText();
         base_input = jBaseField1.getText();

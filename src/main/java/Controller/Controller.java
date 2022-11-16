@@ -67,15 +67,17 @@ public class Controller {
      * @param host
      * @param port
      * @param base
-     * @param login
+     * @param user
      * @param password 
      */
-    public static void openDatabase(String host, String port, String base, String login, String password) {
-        Controller.MariaDBObject = new DatabaseUser(host, port, base, login, password);
+    public static void openDatabase(String host, String port, String base, String user, String password) {
+        if (SGBD.equals("MariaDB")) {
+            Controller.MariaDBObject = new DatabaseUser(host, port, base, user, password);
+        }
         
-        (new ConnectionFactory()).getSGBD(Controller.SGBD);
-        
-        connection.getConnection();
+        (new ConnectionFactory()).getSGBD(SGBD);
+
+        ConnectionFactory.connection.getConnection();
     }
     
     /**
@@ -84,7 +86,7 @@ public class Controller {
      */
     public static boolean checkDatabase() {
         try {
-            return (connection.getResultSet("SELECT 1") instanceof ResultSet);
+            return (ConnectionFactory.connection.getResultSet("SELECT 1") instanceof ResultSet);
         } catch (Exception exception) {
             System.err.println("Exception: " + exception.getMessage());
             return false;
@@ -94,7 +96,7 @@ public class Controller {
     /**
      * Disable the database connection.
      */
-    public static void closeDatabase() {
+    public static void closeDatabase() {        
         connection.terminate();
     }
 }
