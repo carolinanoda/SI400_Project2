@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Class responsible for connecting the application with the MariaDB database.
@@ -31,6 +33,8 @@ public class MariaDBConnection implements InterfaceDatabaseDAO {
     public Connection getConnection() {
         if (this.connection == null) {
             try {
+                Class.forName("org.mariadb.jdbc.Driver");
+                
                 String DBString = DB.replaceAll("\\{\\{host}}", Controller.MariaDBObject.getHost());
                 DBString = DBString.replaceAll("\\{\\{port}}", Controller.MariaDBObject.getPort());
                 DBString = DBString.replaceAll("\\{\\{database}}", Controller.MariaDBObject.getBase());
@@ -44,6 +48,8 @@ public class MariaDBConnection implements InterfaceDatabaseDAO {
                 }
             } catch (SQLException exception) {
                 System.err.println("Exception: " + exception.getMessage());
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(MariaDBConnection.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         return this.connection;
