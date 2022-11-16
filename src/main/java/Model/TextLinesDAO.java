@@ -1,6 +1,5 @@
 package Model;
 
-import Controller.Controller;
 import java.util.List;
 import java.sql.ResultSet;
 import java.sql.SQLException;

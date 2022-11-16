@@ -1,4 +1,3 @@
-package com.mycompany.si400_project2;
 import View.TextForm;
 
 /**
