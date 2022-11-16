@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.ConnectionFactory;
+import static Model.ConnectionFactory.connection;
 import Model.DatabaseUser;
 import Model.InterfaceDatabaseDAO;
 import Model.TextLines;
@@ -8,6 +9,7 @@ import Model.TextLinesDAO;
 import Model.WriteFile;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 import javax.swing.JTextArea;
 
@@ -68,8 +70,12 @@ public class Controller {
      * @param login
      * @param password 
      */
-    public static void databaseUser(String host, String port, String base, String login, String password) {
+    public static void openDatabase(String host, String port, String base, String login, String password) {
         Controller.MariaDBObject = new DatabaseUser(host, port, base, login, password);
+        
+        (new ConnectionFactory()).getSGBD(Controller.SGBD);
+        
+        connection.getConnection();
     }
     
     /**
@@ -78,11 +84,17 @@ public class Controller {
      */
     public static boolean checkDatabase() {
         try {
-            InterfaceDatabaseDAO connection = (new ConnectionFactory()).getSGBD(Controller.SGBD);
-            return (connection.getConnection() instanceof Connection);   
+            return (connection.getResultSet("SELECT 1") instanceof ResultSet);
         } catch (Exception exception) {
             System.err.println("Exception: " + exception.getMessage());
             return false;
         }
+    }
+    
+    /**
+     * Disable the database connection.
+     */
+    public static void closeDatabase() {
+        connection.terminate();
     }
 }

@@ -16,11 +16,13 @@ package Model;
  */
 
 public class ConnectionFactory {
+    public static InterfaceDatabaseDAO connection;
+
     public InterfaceDatabaseDAO getSGBD (String SGBD) {
         try {
             if (SGBD == null) SGBD = "SQLite";
-            if (SGBD.equals("SQLite")) return new SQLiteConnection();
-            if (SGBD.equals("MariaDB")) return new MariaDBConnection();
+            if (SGBD.equals("SQLite")) this.connection = new SQLiteConnection();
+            if (SGBD.equals("MariaDB")) this.connection = new MariaDBConnection();
         } catch (Exception exception) {
             System.err.println("Exception: " + exception.getMessage());
         }

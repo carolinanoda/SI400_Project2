@@ -222,7 +222,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         login_input = jLoginField1.getText();
         password_input = new String(jPasswordField1.getPassword());
         
-        Controller.databaseUser(host_input, port_input, base_input, login_input, password_input);
+        Controller.openDatabase(host_input, port_input, base_input, login_input, password_input);
         
         if(checkDatabase()) {
             this.dispose();

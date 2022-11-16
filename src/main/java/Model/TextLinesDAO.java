@@ -20,17 +20,7 @@ import java.util.ArrayList;
  */
 
 public class TextLinesDAO extends ConnectionFactory {
-
     private static TextLinesDAO instance;
-    private static InterfaceDatabaseDAO connection;
-    
-    /**
-     * Establishes a connection to the database.
-     */
-    private TextLinesDAO() {
-        connection = getSGBD(Controller.SGBD);
-        connection.getConnection();
-    }
     
     /**
      * Class constructor.
