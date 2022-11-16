@@ -15,8 +15,10 @@ import javax.swing.JTextArea;
  * Class responsible for intermediating the visualization requests for data 
  * manipulation.
  *
+ * @author Carolina Noda Morishita
  * @author Gustavo Ramos Romagnolo
  * @author Marcos César Medeiros
+ * @author Mariana Pereira Araújo
  * @author Thamires de Melo Prado
  * @version 1.0
  */

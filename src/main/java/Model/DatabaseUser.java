@@ -7,7 +7,11 @@ package Model;
 /**
  * Class responsible for creating Getters and Setters of the user's data.
  *
+ * @author Carolina Noda Morishita
+ * @author Gustavo Ramos Romagnolo
  * @author Marcos César Medeiros
+ * @author Mariana Pereira Araújo
+ * @author Thamires de Melo Prado
  * @version 1.0
  */
 

@@ -11,8 +11,10 @@ import java.util.ArrayList;
  * transforming them into an object to perform the data manipulation process 
  * in the program.
  *
+ * @author Carolina Noda Morishita
  * @author Gustavo Ramos Romagnolo
  * @author Marcos César Medeiros
+ * @author Mariana Pereira Araújo
  * @author Thamires de Melo Prado
  * @version 1.0
  */

@@ -7,7 +7,11 @@ package Model;
 /**
  * Factory class that facilitates database switching.
  *
+ * @author Carolina Noda Morishita
+ * @author Gustavo Ramos Romagnolo
  * @author Marcos César Medeiros
+ * @author Mariana Pereira Araújo
+ * @author Thamires de Melo Prado
  * @version 1.0
  */
 

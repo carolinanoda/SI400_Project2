@@ -96,12 +96,11 @@ public class Help extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         text.setEditable(false);
         text.setLineWrap(true);
-        text.setText("No banco de dados, há uma série de textos da literatura brasileira.\n"
-                + "Cada texto foi atribuído a um grupo e separado em linhas individuais, cada uma "
-                + "correspondendo a uma linha na tabela."
-                + "As linhas foram embaralhadas na base de dados.\n" +
-                "O programa recupera o texto do grupo ordenando as linhas via comando SQL e reconstruindo" +
-                "a obra original, que deverá ser gravada em um arquivo local (.txt)");   
+        text.setText(
+                "No banco de dados, há uma série de textos da literatura brasileira.\n\n"
+                + "Cada texto foi atribuído a um grupo e separado em linhas individuais, cada uma correspondendo a uma linha na tabela.\n\n"
+                + "As linhas foram embaralhadas na base de dados e o programa recupera o texto do grupo ordenando as linhas via comando SQL e reconstruindo a obra original, que deverá ser gravada em um arquivo local (.txt)"
+        );
     }
     
     /**

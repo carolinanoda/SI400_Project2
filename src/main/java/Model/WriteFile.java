@@ -13,7 +13,11 @@ import javax.swing.JFrame;
  * Class responsible for asking the user the location where he wants to save
  * the text file.
  *
+ * @author Carolina Noda Morishita
  * @author Gustavo Ramos Romagnolo
+ * @author Marcos César Medeiros
+ * @author Mariana Pereira Araújo
+ * @author Thamires de Melo Prado
  * @version 1.0
  */
 
