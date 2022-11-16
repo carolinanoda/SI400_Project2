@@ -12,7 +12,7 @@ import static Controller.Controller.checkDatabase;
  * Class responsible for the authentication popup's interface that checks the
  * user's input to make connection with the database.
  * 
- * @author Carolina Noda Morishita
+ * @author Carolina Noda
  * @version 1.0
  */
 public class AuthenticationPopup extends javax.swing.JFrame {
@@ -59,12 +59,6 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel1.setText("Senha:");
         jLabel1.setToolTipText("");
 
-        jPortField1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jPortField1KeyPressed(evt);
-            }
-        });
-
         jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jPasswordField1KeyPressed(evt);
@@ -83,18 +77,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel3.setText("Insira seus dados para acessar o portal");
 
         jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("Usuário e/ou senha inválidos");
-
-        jHostField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jHostField1ActionPerformed(evt);
-            }
-        });
-        jHostField1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jHostField1KeyPressed(evt);
-            }
-        });
+        jLabel4.setText("Dados inválidos. ");
 
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel5.setText("Host:");
@@ -104,16 +87,11 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel6.setText("Login:");
         jLabel6.setToolTipText("");
 
-        jLoginField1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jLoginField1KeyPressed(evt);
-            }
-        });
-
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel7.setText("Porta:");
         jLabel7.setToolTipText("");
 
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 15));
         jLabel2.setText("Base:");
 
         jBaseField1.setToolTipText("");
@@ -151,12 +129,12 @@ public class AuthenticationPopup extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(198, 198, 198)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(29, 29, 29)))))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(273, 273, 273))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,38 +181,24 @@ public class AuthenticationPopup extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLoginField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLoginField1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLoginField1KeyPressed
-
-    private void jHostField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jHostField1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jHostField1KeyPressed
-
+    
+    /**
+     * Gets user's input when "Entrar" button is clicked.
+     * @param evt 
+     */
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         getInput();
     }//GEN-LAST:event_jButton1MouseClicked
-
+    
+    /**
+     * Gets user's input when enter key is pressed in password field.
+     * @param evt 
+     */
     private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             getInput();
         }
     }//GEN-LAST:event_jPasswordField1KeyPressed
-
-    /**
-     * Gets user's input when enter key is pressed in username field.
-     * @param evt 
-     */
-    private void jPortField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPortField1KeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            getInput();
-        }
-    }//GEN-LAST:event_jPortField1KeyPressed
-
-    private void jHostField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHostField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jHostField1ActionPerformed
 
     public String host_input;
     public String port_input;

@@ -19,14 +19,24 @@ import javax.swing.JFrame;
 
 public class WriteFile {
     private static WriteFile instance = null;
-
+    
+    /**
+     * Class constructor.
+     * @return WriteFile instance of WriteFile class.
+     */
     public static WriteFile getInstance() {
         if (instance == null) {
             instance = new WriteFile();
         }
         return instance;
     }
-
+    
+    /**
+     * Writes file to disk, given a path and the contents of the file.
+     * @param content String text that will be stored inside the file.
+     * @param file_name String representing the file name or the path of the file.
+     * @throws IOException Exception thrown when there is a problem writing the file.
+     */
     public void writeFile(String content, String file_name) throws IOException {
         JFileChooser chooser = new JFileChooser();
         JFrame parentFrame = new JFrame();

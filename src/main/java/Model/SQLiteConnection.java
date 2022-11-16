@@ -17,6 +17,10 @@ public class SQLiteConnection implements InterfaceDatabaseDAO {
     private String DB = "jdbc:sqlite:SI400A-Project2.db";
     private Connection connection;
     
+    /**
+     * Tries to establish a connection to SQLite database with user's input.
+     * @return connection object of Connection class.
+     */
     @Override
     public Connection getConnection() {
         if (this.connection == null) {
@@ -32,7 +36,11 @@ public class SQLiteConnection implements InterfaceDatabaseDAO {
         }
         return this.connection;
     }
-
+    
+    /**
+     * @param query to be executed.
+     * @return resultSet integer representing the number of rows affected by the SQL statement.
+     */
     @Override
     public ResultSet getResultSet(String query) {
         Statement statement;
@@ -47,6 +55,9 @@ public class SQLiteConnection implements InterfaceDatabaseDAO {
         return resultSet;
     }
     
+    /**
+     * Ends connection with the database.
+     */
     @Override
     public void terminate() {
         try {

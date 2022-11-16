@@ -20,6 +20,10 @@ public class MariaDBConnection implements InterfaceDatabaseDAO {
     private String DB = "jdbc:mariadb://{{host}}:{{port}}/{{database}}?user={{user}}&password={{password}}";
     private Connection connection;
     
+    /**
+     * Tries to establish a connection to MariaDB with user's input.
+     * @return connection object of Connection class.
+     */
     @Override
     public Connection getConnection() {
         if (this.connection == null) {
@@ -42,6 +46,10 @@ public class MariaDBConnection implements InterfaceDatabaseDAO {
         return this.connection;
     }
     
+    /**
+     * @param query to be executed.
+     * @return resultSet integer representing the number of rows affected by the SQL statement.
+     */
     @Override
     public ResultSet getResultSet(String query) {
         Statement statement;
@@ -56,6 +64,9 @@ public class MariaDBConnection implements InterfaceDatabaseDAO {
         return resultSet;
     }
     
+    /**
+     * Ends connection with the database.
+     */
     @Override
     public void terminate() {
         try {

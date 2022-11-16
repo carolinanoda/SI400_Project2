@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 
 /**
  * Class responsible for the main window's interface that shows the recovered
- * texts of each group.
+ * texts of each selected group.
  * 
- * @author Carolina Noda Morishita
+ * @author Carolina Noda
  * @author Mariana Pereira Araújo
  * @author Thamires de Melo Prado
  * @version 1.0
@@ -96,11 +96,6 @@ public class TextForm extends javax.swing.JFrame {
         jLabel2.setText("Selecione qual texto deseja visualizar:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um grupo", "Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E", "Grupo F", "Grupo G", "Grupo H", "Grupo I", "Grupo J", "Grupo K", "Grupo L" }));
-        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox1ItemStateChanged(evt);
-            }
-        });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -192,7 +187,11 @@ public class TextForm extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
+    
+    /**
+     * Saves the presented text.
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             int index = jComboBox1.getSelectedIndex();
@@ -202,10 +201,6 @@ public class TextForm extends javax.swing.JFrame {
             Logger.getLogger(TextForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
-        
-    }//GEN-LAST:event_jComboBox1ItemStateChanged
     
     /**
      * Exibits the text based on the user's selected option of the drop-down list.
@@ -274,7 +269,7 @@ public class TextForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
     
     /**
-     * Opens the credits and version window when menu item "Sobre" is clicked.
+     * Opens the credits and version's window when menu item "Sobre" is clicked.
      * @param evt 
      */
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed

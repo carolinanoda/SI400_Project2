@@ -21,16 +21,27 @@ public class TextLinesDAO extends ConnectionFactory {
 
     private static TextLinesDAO instance;
     private static InterfaceDatabaseDAO connection;
-
+    
+    /**
+     * Establishes a connection to the database.
+     */
     private TextLinesDAO() {
         connection = getSGBD(Controller.SGBD);
         connection.getConnection();
     }
-
+    
+    /**
+     * Class constructor.
+     * @return TextLinesDAO instance of TextLinesDAO class.
+     */
     public static TextLinesDAO getInstance() {
         return ((instance == null) ? (instance = new TextLinesDAO()) : instance);
     }
-
+    
+    /**
+     * @param result_set table of data representing a database result set.
+     * @return textLine object that retrives the values of the columns.
+     */
     private TextLines buildObject(ResultSet result_set) {
         TextLines textLine = null;
 
@@ -48,7 +59,12 @@ public class TextLinesDAO extends ConnectionFactory {
 
         return textLine;
     }
-
+    
+    /**
+     * Acesses database and returns an array list with the all text lines.
+     * @param query to be executed.
+     * @return ArrayList textLines that represents all the text lines.
+     */
     public List retrieve(String query) {
         List<TextLines> textLines = new ArrayList();
         ResultSet result_set = connection.getResultSet(query);
@@ -62,7 +78,11 @@ public class TextLinesDAO extends ConnectionFactory {
         }
         return textLines;
     }
-
+    
+    /**
+     * @param groupId int value that storages the selected text.
+     * @return List retriveAllLines that retrieves the records of the Framents table.
+     */
     public List retrieveAllLines(int groupId) {
         return this.retrieve("SELECT * FROM Fragmentos WHERE groupId = " + groupId + " ORDER BY line ASC");
     }
