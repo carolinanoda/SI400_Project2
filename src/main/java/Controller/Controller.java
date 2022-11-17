@@ -24,7 +24,7 @@ import javax.swing.JTextArea;
  */
 
 public class Controller {
-    public static String SGBD = "MariaDB";
+    public static String SGBD = "SQLite";
     public static DatabaseUser MariaDBObject = null;
     
     /**
@@ -69,7 +69,7 @@ public class Controller {
      * @param password 
      */
     public static void openDatabase(String host, String port, String base, String user, String password) {
-        if (SGBD.equals("MariaDB")) {
+        if (SGBD.equals("SQLite")) {
             Controller.MariaDBObject = new DatabaseUser(host, port, base, user, password);
         }
         

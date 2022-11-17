@@ -67,6 +67,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(54, 89, 62));
         jButton1.setText("Entrar");
+        jButton1.setBorderPainted(false);
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
