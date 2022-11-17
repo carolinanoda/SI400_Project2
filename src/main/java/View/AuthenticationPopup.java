@@ -65,6 +65,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(54, 89, 62));
         jButton1.setText("Entrar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -76,6 +77,7 @@ public class AuthenticationPopup extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Insira seus dados para acessar o portal");
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 0));
         jLabel4.setText("Dados inválidos. ");
 
