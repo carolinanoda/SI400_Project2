@@ -24,7 +24,7 @@ import javax.swing.JTextArea;
  */
 
 public class Controller {
-    public static String SGBD = "SQLite";
+    public static String SGBD = "MariaDB";
     public static DatabaseUser MariaDBObject = null;
     
     /**
