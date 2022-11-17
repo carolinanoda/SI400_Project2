@@ -4,11 +4,6 @@
  */
 package View;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-
 /**
  * Class responsible for presenting the project's authorship and version.
  * 
