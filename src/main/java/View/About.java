@@ -51,29 +51,15 @@ public class About extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Versão e Créditos"));
 
-        try {
-            BufferedImage image_carol = ImageIO.read(new File("./src/main/java/Images/Carolina.png"));
-            ImageIcon icon_carol = new ImageIcon(image_carol);
-            jLabel1.setIcon(icon_carol); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Carolina.png"))); // NOI18N
 
-            BufferedImage image_gustavo = ImageIO.read(new File("./src/main/java/Images/Gustavo.png"));
-            ImageIcon icon_gustavo = new ImageIcon(image_gustavo);
-            jLabel2.setIcon(icon_gustavo); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Gustavo.png"))); // NOI18N
 
-            BufferedImage image_thamires = ImageIO.read(new File("./src/main/java/Images/Thamires.png"));
-            ImageIcon icon_thamires = new ImageIcon(image_thamires);
-            jLabel3.setIcon(icon_thamires); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Thamires.png"))); // NOI18N
 
-            BufferedImage image_marcos = ImageIO.read(new File("./src/main/java/Images/Marcos.png"));
-            ImageIcon icon_marcos = new ImageIcon(image_marcos);
-            jLabel4.setIcon(icon_marcos); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Marcos.png"))); // NOI18N
 
-            BufferedImage image_mariana = ImageIO.read(new File("./src/main/java/Images/Mariana.png"));
-            ImageIcon icon_mariana = new ImageIcon(image_mariana);
-            jLabel5.setIcon(icon_mariana); // NOI18N            
-        } catch (Exception exception) {
-            System.err.println("Exception: " + exception.getMessage());
-        }
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Mariana.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 0, 12)); // NOI18N
         jLabel6.setText("Carolina Noda Morishita 254187 ");
