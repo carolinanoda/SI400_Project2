@@ -69,7 +69,7 @@ public class Controller {
      * @param password 
      */
     public static void openDatabase(String host, String port, String base, String user, String password) {
-        if (SGBD.equals("SQLite")) {
+        if (SGBD.equals("MariaDB")) {
             Controller.MariaDBObject = new DatabaseUser(host, port, base, user, password);
         }
         
